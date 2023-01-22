@@ -15,6 +15,6 @@ set CUR_SS=%time:~6,2%
 
 set name=%CUR_DD%.%CUR_MM%.%CUR_YYYY%-%CUR_HH%.%CUR_NN%.%CUR_SS%
 
-robot --outputdir Results/ResultsFor%filename1% %filepath%/%filename1%.robot
-robot --outputdir Results/ResultsFor%filename2% %filepath%/%filename2%.robot
-robot --outputdir Results/ResultsFor%filename3% %filepath%/%filename3%.robot
+robot --outputdir Results/ResultsFor%filename1%-%name% %filepath%/%filename1%.robot
+robot --outputdir Results/ResultsFor%filename2%-%name% %filepath%/%filename2%.robot
+robot --outputdir Results/ResultsFor%filename3%-%name% %filepath%/%filename3%.robot
