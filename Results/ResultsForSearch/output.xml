@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230123 02:45:35.673" rpa="false" schemaversion="3">
+<suite id="s1" name="Search" source="C:\Users\yamin\OneDrive\Desktop\Robot_Framework\BluestonePIM_Task\Tests\Search.robot">
+<test id="s1-t1" name="Search Record By FirstName &amp; LastName" line="7">
+<kw name="Open Browser and Maximize Window" library="LoginLogout_Keywords" type="SETUP">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20230123 02:45:35.856" endtime="20230123 02:45:35.856"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230123 02:45:35.857" level="INFO">Opening browser 'Chrome' to base url 'https://talent-recruitment.test.bluestonepim.com/index.html'.</msg>
+<status status="PASS" starttime="20230123 02:45:35.857" endtime="20230123 02:45:38.520"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230123 02:45:38.520" endtime="20230123 02:45:38.664"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:45:38.664" endtime="20230123 02:45:38.693"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:45:38.697" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:45:38.693" endtime="20230123 02:45:38.697"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:38.715" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:38.697" endtime="20230123 02:45:38.715"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:38.731" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:38.715" endtime="20230123 02:45:38.731"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:45:38.754" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:45:38.731" endtime="20230123 02:45:38.754"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:38.855" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:38.754" endtime="20230123 02:45:38.855"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:38.664" endtime="20230123 02:45:38.855"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:35.856" endtime="20230123 02:45:38.855"/>
+</kw>
+<kw name="Login with Credential" library="LoginLogout_Keywords">
+<arg>${VALID_EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:38.857" level="INFO">Typing text 'admin@email.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230123 02:45:38.856" endtime="20230123 02:45:38.956"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:38.956" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230123 02:45:38.979" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230123 02:45:39.048" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230123 02:45:38.956" endtime="20230123 02:45:39.048"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:41.048" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:39.048" endtime="20230123 02:45:41.048"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:41.048" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:45:41.048" endtime="20230123 02:45:41.095"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:38.856" endtime="20230123 02:45:41.095"/>
+</kw>
+<kw name="Dashboard Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>composition-button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:45:41.095" endtime="20230123 02:45:41.533"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${DASHBOARD_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:45:41.537" level="INFO">Page title is 'Dashboard'.</msg>
+<status status="PASS" starttime="20230123 02:45:41.533" endtime="20230123 02:45:41.537"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:43.538" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:41.538" endtime="20230123 02:45:43.538"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Dashboard_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:43.646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Dashboard_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Dashboard_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:43.538" endtime="20230123 02:45:43.646"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:41.095" endtime="20230123 02:45:43.646"/>
+</kw>
+<kw name="Search by FirstName" library="Search_Keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@placeholder='Search']</arg>
+<arg>${FIRSTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:43.648" level="INFO">Typing text 'Jon' into text field 'xpath://input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20230123 02:45:43.647" endtime="20230123 02:45:43.731"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:45.732" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:43.731" endtime="20230123 02:45:45.732"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${ROW_COUNT}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:45.767" level="INFO">Element 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[1]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:45.733" endtime="20230123 02:45:45.767"/>
+</kw>
+<msg timestamp="20230123 02:45:45.767" level="INFO">${RowVisible} = True</msg>
+<status status="PASS" starttime="20230123 02:45:45.733" endtime="20230123 02:45:45.767"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230123 02:45:45.767" endtime="20230123 02:45:45.768"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:45:45.768" endtime="20230123 02:45:45.794"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[2]</arg>
+<arg>${FIRSTNAME}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230123 02:45:45.814" level="INFO">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[1]/div/div[@class='MuiDataGrid-cellContent'])[2]' contains text 'Jon'.</msg>
+<status status="PASS" starttime="20230123 02:45:45.794" endtime="20230123 02:45:45.814"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230123 02:45:45.814" level="INFO">${Count} = 2</msg>
+<status status="PASS" starttime="20230123 02:45:45.814" endtime="20230123 02:45:45.814"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:45.732" endtime="20230123 02:45:45.814"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:45.939" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/selenium-screenshot-1.png"&gt;&lt;img src="../../Screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230123 02:45:45.939" level="FAIL">Element with locator 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[2]' not found.</msg>
+<status status="FAIL" starttime="20230123 02:45:45.814" endtime="20230123 02:45:45.943"/>
+</kw>
+<msg timestamp="20230123 02:45:45.943" level="INFO">${RowVisible} = False</msg>
+<status status="PASS" starttime="20230123 02:45:45.814" endtime="20230123 02:45:45.943"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20230123 02:45:45.943" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20230123 02:45:45.943" endtime="20230123 02:45:45.943"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230123 02:45:45.943" endtime="20230123 02:45:45.943"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[2]</arg>
+<arg>${FIRSTNAME}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20230123 02:45:45.943" endtime="20230123 02:45:45.943"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230123 02:45:45.944" endtime="20230123 02:45:45.944"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:45.814" endtime="20230123 02:45:45.944"/>
+</iter>
+<status status="PASS" starttime="20230123 02:45:45.732" endtime="20230123 02:45:45.944"/>
+</for>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>SearchBy_Firstname_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:46.050" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/SearchBy_Firstname_Screenshot.png"&gt;&lt;img src="../../Screenshots/SearchBy_Firstname_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:45.944" endtime="20230123 02:45:46.050"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:43.647" endtime="20230123 02:45:46.050"/>
+</kw>
+<kw name="Search by LastName" library="Search_Keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@placeholder='Search']</arg>
+<arg>${LASTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:46.052" level="INFO">Typing text 'Clifford' into text field 'xpath://input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20230123 02:45:46.052" endtime="20230123 02:45:46.154"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:48.156" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:46.155" endtime="20230123 02:45:48.156"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${ROW_COUNT}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:48.172" level="INFO">Element 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[1]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:48.157" endtime="20230123 02:45:48.173"/>
+</kw>
+<msg timestamp="20230123 02:45:48.173" level="INFO">${RowVisible} = True</msg>
+<status status="PASS" starttime="20230123 02:45:48.157" endtime="20230123 02:45:48.173"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230123 02:45:48.173" endtime="20230123 02:45:48.173"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[3]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:45:48.173" endtime="20230123 02:45:48.192"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[3]</arg>
+<arg>${LASTNAME}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230123 02:45:48.213" level="INFO">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[1]/div/div[@class='MuiDataGrid-cellContent'])[3]' contains text 'Clifford'.</msg>
+<status status="PASS" starttime="20230123 02:45:48.193" endtime="20230123 02:45:48.213"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230123 02:45:48.215" level="INFO">${Count} = 2</msg>
+<status status="PASS" starttime="20230123 02:45:48.215" endtime="20230123 02:45:48.215"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:48.156" endtime="20230123 02:45:48.215"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:48.330" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/selenium-screenshot-2.png"&gt;&lt;img src="../../Screenshots/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230123 02:45:48.330" level="FAIL">Element with locator 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[2]' not found.</msg>
+<status status="FAIL" starttime="20230123 02:45:48.216" endtime="20230123 02:45:48.331"/>
+</kw>
+<msg timestamp="20230123 02:45:48.331" level="INFO">${RowVisible} = False</msg>
+<status status="PASS" starttime="20230123 02:45:48.216" endtime="20230123 02:45:48.331"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20230123 02:45:48.331" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20230123 02:45:48.331" endtime="20230123 02:45:48.331"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[3]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230123 02:45:48.331" endtime="20230123 02:45:48.331"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[3]</arg>
+<arg>${LASTNAME}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20230123 02:45:48.331" endtime="20230123 02:45:48.331"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230123 02:45:48.331" endtime="20230123 02:45:48.331"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:48.215" endtime="20230123 02:45:48.331"/>
+</iter>
+<status status="PASS" starttime="20230123 02:45:48.156" endtime="20230123 02:45:48.331"/>
+</for>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>SearchBy_Lastname_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:48.458" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/SearchBy_Lastname_Screenshot.png"&gt;&lt;img src="../../Screenshots/SearchBy_Lastname_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:48.331" endtime="20230123 02:45:48.458"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:46.051" endtime="20230123 02:45:48.458"/>
+</kw>
+<kw name="Click Logout" library="LoginLogout_Keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>composition-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:48.460" level="INFO">Clicking button 'composition-button'.</msg>
+<status status="PASS" starttime="20230123 02:45:48.459" endtime="20230123 02:45:48.521"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:50.523" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:48.521" endtime="20230123 02:45:50.523"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Logout__Button_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:50.649" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Logout__Button_Screenshot.png"&gt;&lt;img src="../../Screenshots/Logout__Button_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:50.523" endtime="20230123 02:45:50.649"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>composition-menu</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:50.649" level="INFO">Clicking element 'composition-menu'.</msg>
+<status status="PASS" starttime="20230123 02:45:50.649" endtime="20230123 02:45:50.688"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:52.688" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:50.688" endtime="20230123 02:45:52.688"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:48.458" endtime="20230123 02:45:52.688"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:45:52.689" endtime="20230123 02:45:52.701"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:45:52.704" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:45:52.701" endtime="20230123 02:45:52.704"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:52.714" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:52.704" endtime="20230123 02:45:52.714"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:52.723" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:52.714" endtime="20230123 02:45:52.723"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:45:52.736" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:45:52.724" endtime="20230123 02:45:52.736"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:52.834" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:52.737" endtime="20230123 02:45:52.834"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:52.689" endtime="20230123 02:45:52.834"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230123 02:45:52.834" endtime="20230123 02:45:54.984"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:35.855" endtime="20230123 02:45:54.984"/>
+</test>
+<test id="s1-t2" name="Search Record By Age" line="15">
+<kw name="Open Browser and Maximize Window" library="LoginLogout_Keywords" type="SETUP">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20230123 02:45:54.989" endtime="20230123 02:45:54.990"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230123 02:45:54.991" level="INFO">Opening browser 'Chrome' to base url 'https://talent-recruitment.test.bluestonepim.com/index.html'.</msg>
+<status status="PASS" starttime="20230123 02:45:54.990" endtime="20230123 02:45:57.414"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230123 02:45:57.414" endtime="20230123 02:45:57.556"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:45:57.556" endtime="20230123 02:45:57.577"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:45:57.581" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:45:57.577" endtime="20230123 02:45:57.581"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:57.599" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:57.581" endtime="20230123 02:45:57.599"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:45:57.616" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:45:57.599" endtime="20230123 02:45:57.616"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:45:57.640" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:45:57.616" endtime="20230123 02:45:57.640"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:45:57.769" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:45:57.640" endtime="20230123 02:45:57.769"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:57.556" endtime="20230123 02:45:57.769"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:54.988" endtime="20230123 02:45:57.769"/>
+</kw>
+<kw name="Login with Credential" library="LoginLogout_Keywords">
+<arg>${VALID_EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:57.772" level="INFO">Typing text 'admin@email.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230123 02:45:57.771" endtime="20230123 02:45:57.875"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:57.875" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230123 02:45:57.899" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230123 02:45:57.965" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230123 02:45:57.875" endtime="20230123 02:45:57.966"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:45:59.966" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:45:57.966" endtime="20230123 02:45:59.966"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:45:59.966" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:45:59.966" endtime="20230123 02:46:00.013"/>
+</kw>
+<status status="PASS" starttime="20230123 02:45:57.770" endtime="20230123 02:46:00.013"/>
+</kw>
+<kw name="Dashboard Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>composition-button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:46:00.014" endtime="20230123 02:46:01.070"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${DASHBOARD_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:46:01.073" level="INFO">Page title is 'Dashboard'.</msg>
+<status status="PASS" starttime="20230123 02:46:01.070" endtime="20230123 02:46:01.073"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:46:03.073" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:46:01.073" endtime="20230123 02:46:03.073"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Dashboard_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:46:03.204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Dashboard_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Dashboard_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:46:03.073" endtime="20230123 02:46:03.204"/>
+</kw>
+<status status="PASS" starttime="20230123 02:46:00.014" endtime="20230123 02:46:03.205"/>
+</kw>
+<kw name="Search by Age" library="Search_Keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@placeholder='Search']</arg>
+<arg>${AGE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:46:03.205" level="INFO">Typing text '35' into text field 'xpath://input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20230123 02:46:03.205" endtime="20230123 02:46:03.282"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:46:05.284" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:46:03.283" endtime="20230123 02:46:05.284"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${ROW_COUNT}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:46:05.318" level="INFO">Element 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[1]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:46:05.285" endtime="20230123 02:46:05.319"/>
+</kw>
+<msg timestamp="20230123 02:46:05.319" level="INFO">${RowVisible} = True</msg>
+<status status="PASS" starttime="20230123 02:46:05.285" endtime="20230123 02:46:05.319"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230123 02:46:05.319" endtime="20230123 02:46:05.320"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[4]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:46:05.320" endtime="20230123 02:46:05.343"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[4]</arg>
+<arg>${AGE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230123 02:46:05.357" level="INFO">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[1]/div/div[@class='MuiDataGrid-cellContent'])[4]' contains text '35'.</msg>
+<status status="PASS" starttime="20230123 02:46:05.343" endtime="20230123 02:46:05.357"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230123 02:46:05.357" level="INFO">${Count} = 2</msg>
+<status status="PASS" starttime="20230123 02:46:05.357" endtime="20230123 02:46:05.357"/>
+</kw>
+<status status="PASS" starttime="20230123 02:46:05.285" endtime="20230123 02:46:05.357"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:46:05.369" level="INFO">Element 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[2]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:46:05.357" endtime="20230123 02:46:05.369"/>
+</kw>
+<msg timestamp="20230123 02:46:05.369" level="INFO">${RowVisible} = True</msg>
+<status status="PASS" starttime="20230123 02:46:05.357" endtime="20230123 02:46:05.369"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230123 02:46:05.369" endtime="20230123 02:46:05.369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[4]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:46:05.369" endtime="20230123 02:46:05.382"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[4]</arg>
+<arg>${AGE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230123 02:46:05.498" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/selenium-screenshot-3.png"&gt;&lt;img src="../../Screenshots/selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230123 02:46:05.498" level="FAIL">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[2]/div/div[@class='MuiDataGrid-cellContent'])[4]' should have contained text '35' but its text was '42'.</msg>
+<status status="FAIL" starttime="20230123 02:46:05.382" endtime="20230123 02:46:05.500"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230123 02:46:05.500" endtime="20230123 02:46:05.501"/>
+</kw>
+<status status="FAIL" starttime="20230123 02:46:05.357" endtime="20230123 02:46:05.501"/>
+</iter>
+<status status="FAIL" starttime="20230123 02:46:05.284" endtime="20230123 02:46:05.501"/>
+</for>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>SearchBy_Age_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230123 02:46:05.501" endtime="20230123 02:46:05.501"/>
+</kw>
+<status status="FAIL" starttime="20230123 02:46:03.205" endtime="20230123 02:46:05.501"/>
+</kw>
+<kw name="Click Logout" library="LoginLogout_Keywords">
+<status status="NOT RUN" starttime="20230123 02:46:05.503" endtime="20230123 02:46:05.503"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<status status="NOT RUN" starttime="20230123 02:46:05.503" endtime="20230123 02:46:05.503"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230123 02:46:05.504" endtime="20230123 02:46:07.648"/>
+</kw>
+<status status="FAIL" starttime="20230123 02:45:54.987" endtime="20230123 02:46:07.649">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[2]/div/div[@class='MuiDataGrid-cellContent'])[4]' should have contained text '35' but its text was '42'.</status>
+</test>
+<test id="s1-t3" name="Search Record By FullName" line="22">
+<kw name="Open Browser and Maximize Window" library="LoginLogout_Keywords" type="SETUP">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20230123 02:46:07.654" endtime="20230123 02:46:07.655"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230123 02:46:07.656" level="INFO">Opening browser 'Chrome' to base url 'https://talent-recruitment.test.bluestonepim.com/index.html'.</msg>
+<status status="PASS" starttime="20230123 02:46:07.655" endtime="20230123 02:46:10.114"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230123 02:46:10.114" endtime="20230123 02:46:10.237"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:46:10.237" endtime="20230123 02:46:10.260"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:46:10.266" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:46:10.260" endtime="20230123 02:46:10.266"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:46:10.283" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:46:10.266" endtime="20230123 02:46:10.283"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:46:10.296" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:46:10.284" endtime="20230123 02:46:10.296"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:46:10.319" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:46:10.297" endtime="20230123 02:46:10.319"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:46:10.423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:46:10.319" endtime="20230123 02:46:10.423"/>
+</kw>
+<status status="PASS" starttime="20230123 02:46:10.237" endtime="20230123 02:46:10.423"/>
+</kw>
+<status status="PASS" starttime="20230123 02:46:07.653" endtime="20230123 02:46:10.423"/>
+</kw>
+<kw name="Login with Credential" library="LoginLogout_Keywords">
+<arg>${VALID_EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:46:10.424" level="INFO">Typing text 'admin@email.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230123 02:46:10.424" endtime="20230123 02:46:10.524"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:46:10.524" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230123 02:46:10.548" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230123 02:46:10.636" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230123 02:46:10.524" endtime="20230123 02:46:10.636"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:46:12.637" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:46:10.636" endtime="20230123 02:46:12.637"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:46:12.639" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:46:12.637" endtime="20230123 02:46:12.683"/>
+</kw>
+<status status="PASS" starttime="20230123 02:46:10.424" endtime="20230123 02:46:12.684"/>
+</kw>
+<kw name="Dashboard Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>composition-button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:46:12.684" endtime="20230123 02:46:14.153"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${DASHBOARD_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:46:14.156" level="INFO">Page title is 'Dashboard'.</msg>
+<status status="PASS" starttime="20230123 02:46:14.153" endtime="20230123 02:46:14.156"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:46:16.156" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:46:14.156" endtime="20230123 02:46:16.156"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Dashboard_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:46:16.269" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Dashboard_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Dashboard_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:46:16.156" endtime="20230123 02:46:16.269"/>
+</kw>
+<status status="PASS" starttime="20230123 02:46:12.684" endtime="20230123 02:46:16.269"/>
+</kw>
+<kw name="Search by FullName" library="Search_Keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@placeholder='Search']</arg>
+<arg>${FULLNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:46:16.269" level="INFO">Typing text 'Jaime Lannister' into text field 'xpath://input[@placeholder='Search']'.</msg>
+<status status="PASS" starttime="20230123 02:46:16.269" endtime="20230123 02:46:16.420"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:46:18.421" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:46:16.421" endtime="20230123 02:46:18.421"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${ROW_COUNT}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${RowVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath:(//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:46:18.443" level="INFO">Element 'xpath:(//div[contains(@class,'MuiDataGrid-row')])[1]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:46:18.422" endtime="20230123 02:46:18.443"/>
+</kw>
+<msg timestamp="20230123 02:46:18.443" level="INFO">${RowVisible} = True</msg>
+<status status="PASS" starttime="20230123 02:46:18.421" endtime="20230123 02:46:18.443"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${RowVisible} != ${True}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230123 02:46:18.443" endtime="20230123 02:46:18.443"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[5]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:46:18.443" endtime="20230123 02:46:18.463"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath:((//div[contains(@class,'MuiDataGrid-row')])[${COUNT}]/div/div[@class='MuiDataGrid-cellContent'])[5]</arg>
+<arg>${FULLNAME}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230123 02:46:18.595" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/selenium-screenshot-4.png"&gt;&lt;img src="../../Screenshots/selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230123 02:46:18.595" level="FAIL">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[1]/div/div[@class='MuiDataGrid-cellContent'])[5]' should have contained text 'Jaime Lannister' but its text was 'Jon Snow'.</msg>
+<status status="FAIL" starttime="20230123 02:46:18.463" endtime="20230123 02:46:18.596"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${Count}</var>
+<arg>${COUNT}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230123 02:46:18.596" endtime="20230123 02:46:18.596"/>
+</kw>
+<status status="FAIL" starttime="20230123 02:46:18.421" endtime="20230123 02:46:18.596"/>
+</iter>
+<status status="FAIL" starttime="20230123 02:46:18.421" endtime="20230123 02:46:18.596"/>
+</for>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>SearchBy_FullName_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230123 02:46:18.596" endtime="20230123 02:46:18.596"/>
+</kw>
+<status status="FAIL" starttime="20230123 02:46:16.269" endtime="20230123 02:46:18.596"/>
+</kw>
+<kw name="Click Logout" library="LoginLogout_Keywords">
+<status status="NOT RUN" starttime="20230123 02:46:18.597" endtime="20230123 02:46:18.597"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<status status="NOT RUN" starttime="20230123 02:46:18.597" endtime="20230123 02:46:18.597"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230123 02:46:18.597" endtime="20230123 02:46:20.727"/>
+</kw>
+<status status="FAIL" starttime="20230123 02:46:07.652" endtime="20230123 02:46:20.727">Element 'xpath:((//div[contains(@class,'MuiDataGrid-row')])[1]/div/div[@class='MuiDataGrid-cellContent'])[5]' should have contained text 'Jaime Lannister' but its text was 'Jon Snow'.</status>
+</test>
+<status status="FAIL" starttime="20230123 02:45:35.675" endtime="20230123 02:46:20.728"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="Search">Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

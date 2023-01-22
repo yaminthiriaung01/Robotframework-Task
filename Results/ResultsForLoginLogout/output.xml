@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230123 02:44:26.072" rpa="false" schemaversion="3">
+<suite id="s1" name="LoginLogout" source="C:\Users\yamin\OneDrive\Desktop\Robot_Framework\BluestonePIM_Task\Tests\LoginLogout.robot">
+<test id="s1-t1" name="Login with Invalid Credential" line="7">
+<kw name="Open Browser and Maximize Window" library="LoginLogout_Keywords" type="SETUP">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20230123 02:44:26.272" endtime="20230123 02:44:26.273"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230123 02:44:26.273" level="INFO">Opening browser 'Chrome' to base url 'https://talent-recruitment.test.bluestonepim.com/index.html'.</msg>
+<status status="PASS" starttime="20230123 02:44:26.273" endtime="20230123 02:44:28.732"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230123 02:44:28.732" endtime="20230123 02:44:28.882"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:44:28.882" endtime="20230123 02:44:28.904"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:28.909" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:44:28.904" endtime="20230123 02:44:28.909"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:28.927" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:28.909" endtime="20230123 02:44:28.927"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:28.941" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:28.927" endtime="20230123 02:44:28.941"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:44:28.963" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:28.941" endtime="20230123 02:44:28.963"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:29.061" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:28.963" endtime="20230123 02:44:29.061"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:28.882" endtime="20230123 02:44:29.061"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:26.272" endtime="20230123 02:44:29.061"/>
+</kw>
+<kw name="Login with Credential" library="LoginLogout_Keywords">
+<arg>${INVALID_EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:29.062" level="INFO">Typing text 'admin' into text field 'email'.</msg>
+<status status="PASS" starttime="20230123 02:44:29.062" endtime="20230123 02:44:29.140"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:29.141" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230123 02:44:29.164" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230123 02:44:29.244" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230123 02:44:29.140" endtime="20230123 02:44:29.244"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:31.246" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:29.244" endtime="20230123 02:44:31.246"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:31.246" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:31.246" endtime="20230123 02:44:31.289"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:29.061" endtime="20230123 02:44:31.289"/>
+</kw>
+<kw name="Login Failed Because of Invalid Email" library="LoginLogout_Keywords">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:31.293" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:44:31.290" endtime="20230123 02:44:31.293"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//*[@id=":r0:-helper-text"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:31.309" level="INFO">Element '//*[@id=":r0:-helper-text"]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:31.293" endtime="20230123 02:44:31.309"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id=":r0:-helper-text"]</arg>
+<arg>${INVALID_EMAIL_ERROR}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230123 02:44:31.310" level="INFO">Verifying element '//*[@id=":r0:-helper-text"]' contains exact text 'Email is not valid'.</msg>
+<status status="PASS" starttime="20230123 02:44:31.309" endtime="20230123 02:44:31.326"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:33.328" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:31.326" endtime="20230123 02:44:33.328"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Invalid_Email_Error_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:33.435" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Invalid_Email_Error_Screenshot.png"&gt;&lt;img src="../../Screenshots/Invalid_Email_Error_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:33.328" endtime="20230123 02:44:33.435"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:31.289" endtime="20230123 02:44:33.435"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230123 02:44:33.436" endtime="20230123 02:44:35.560"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:26.272" endtime="20230123 02:44:35.561"/>
+</test>
+<test id="s1-t2" name="Login with Blank Credential" line="11">
+<kw name="Open Browser and Maximize Window" library="LoginLogout_Keywords" type="SETUP">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20230123 02:44:35.563" endtime="20230123 02:44:35.563"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230123 02:44:35.563" level="INFO">Opening browser 'Chrome' to base url 'https://talent-recruitment.test.bluestonepim.com/index.html'.</msg>
+<status status="PASS" starttime="20230123 02:44:35.563" endtime="20230123 02:44:37.796"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230123 02:44:37.796" endtime="20230123 02:44:37.948"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:44:37.949" endtime="20230123 02:44:37.975"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:37.979" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:44:37.975" endtime="20230123 02:44:37.979"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:37.996" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:37.980" endtime="20230123 02:44:37.996"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:38.011" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:37.997" endtime="20230123 02:44:38.011"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:44:38.035" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:38.011" endtime="20230123 02:44:38.035"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:38.141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:38.035" endtime="20230123 02:44:38.141"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:37.949" endtime="20230123 02:44:38.141"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:35.562" endtime="20230123 02:44:38.142"/>
+</kw>
+<kw name="Login with Credential" library="LoginLogout_Keywords">
+<arg>${BLANK}</arg>
+<arg>${BLANK}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:38.142" level="INFO">Typing text '' into text field 'email'.</msg>
+<status status="PASS" starttime="20230123 02:44:38.142" endtime="20230123 02:44:38.189"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:38.190" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230123 02:44:38.217" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230123 02:44:38.241" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230123 02:44:38.189" endtime="20230123 02:44:38.241"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:40.242" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:38.241" endtime="20230123 02:44:40.242"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:40.242" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:40.242" endtime="20230123 02:44:40.287"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:38.142" endtime="20230123 02:44:40.287"/>
+</kw>
+<kw name="Login Failed Beacuse of Blank Credential" library="LoginLogout_Keywords">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:40.293" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:44:40.289" endtime="20230123 02:44:40.294"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//*[@id=":r0:-helper-text"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:40.313" level="INFO">Element '//*[@id=":r0:-helper-text"]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:40.294" endtime="20230123 02:44:40.313"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id=":r0:-helper-text"]</arg>
+<arg>${INVALID_EMAIL_ERROR}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230123 02:44:40.313" level="INFO">Verifying element '//*[@id=":r0:-helper-text"]' contains exact text 'Email is not valid'.</msg>
+<status status="PASS" starttime="20230123 02:44:40.313" endtime="20230123 02:44:40.330"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//*[@id=":r1:-helper-text"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:40.347" level="INFO">Element '//*[@id=":r1:-helper-text"]' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:40.330" endtime="20230123 02:44:40.347"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//*[@id=":r1:-helper-text"]</arg>
+<arg>${MANDATORY_ERROR}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230123 02:44:40.348" level="INFO">Verifying element '//*[@id=":r1:-helper-text"]' contains exact text 'Please enter your password'.</msg>
+<status status="PASS" starttime="20230123 02:44:40.347" endtime="20230123 02:44:40.363"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:42.363" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:40.363" endtime="20230123 02:44:42.363"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Mandatory_Error_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:42.483" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Mandatory_Error_Screenshot.png"&gt;&lt;img src="../../Screenshots/Mandatory_Error_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:42.363" endtime="20230123 02:44:42.483"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:40.289" endtime="20230123 02:44:42.483"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230123 02:44:42.484" endtime="20230123 02:44:44.601"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:35.562" endtime="20230123 02:44:44.602"/>
+</test>
+<test id="s1-t3" name="Login with Valid Credential and Logout" line="15">
+<kw name="Open Browser and Maximize Window" library="LoginLogout_Keywords" type="SETUP">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/Screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20230123 02:44:44.605" endtime="20230123 02:44:44.605"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230123 02:44:44.606" level="INFO">Opening browser 'Chrome' to base url 'https://talent-recruitment.test.bluestonepim.com/index.html'.</msg>
+<status status="PASS" starttime="20230123 02:44:44.605" endtime="20230123 02:44:46.879"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230123 02:44:46.879" endtime="20230123 02:44:47.025"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:44:47.026" endtime="20230123 02:44:47.046"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:47.052" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:44:47.046" endtime="20230123 02:44:47.052"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:47.070" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:47.052" endtime="20230123 02:44:47.071"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:47.085" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:47.071" endtime="20230123 02:44:47.085"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:44:47.108" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:47.085" endtime="20230123 02:44:47.108"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:47.212" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:47.108" endtime="20230123 02:44:47.212"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:47.026" endtime="20230123 02:44:47.212"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:44.605" endtime="20230123 02:44:47.212"/>
+</kw>
+<kw name="Login with Credential" library="LoginLogout_Keywords">
+<arg>${VALID_EMAIL}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:47.213" level="INFO">Typing text 'admin@email.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230123 02:44:47.212" endtime="20230123 02:44:47.315"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:47.315" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230123 02:44:47.342" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230123 02:44:47.412" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230123 02:44:47.315" endtime="20230123 02:44:47.412"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:49.412" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:47.412" endtime="20230123 02:44:49.412"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:49.412" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:49.412" endtime="20230123 02:44:49.454"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:47.212" endtime="20230123 02:44:49.454"/>
+</kw>
+<kw name="Dashboard Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>composition-button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:44:49.455" endtime="20230123 02:44:50.299"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${DASHBOARD_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:50.302" level="INFO">Page title is 'Dashboard'.</msg>
+<status status="PASS" starttime="20230123 02:44:50.299" endtime="20230123 02:44:50.302"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:52.303" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:50.302" endtime="20230123 02:44:52.303"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Dashboard_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:52.442" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Dashboard_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Dashboard_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:52.303" endtime="20230123 02:44:52.442"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:49.455" endtime="20230123 02:44:52.442"/>
+</kw>
+<kw name="Click Logout" library="LoginLogout_Keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>composition-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:52.444" level="INFO">Clicking button 'composition-button'.</msg>
+<status status="PASS" starttime="20230123 02:44:52.443" endtime="20230123 02:44:52.493"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:54.493" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:52.493" endtime="20230123 02:44:54.493"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Logout__Button_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:54.644" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Logout__Button_Screenshot.png"&gt;&lt;img src="../../Screenshots/Logout__Button_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:54.493" endtime="20230123 02:44:54.644"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>composition-menu</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230123 02:44:54.645" level="INFO">Clicking element 'composition-menu'.</msg>
+<status status="PASS" starttime="20230123 02:44:54.644" endtime="20230123 02:44:54.690"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230123 02:44:56.690" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230123 02:44:54.690" endtime="20230123 02:44:56.690"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:52.443" endtime="20230123 02:44:56.690"/>
+</kw>
+<kw name="Login Page Should Be Open" library="LoginLogout_Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://h1/*[text()="${LOGIN_HEADER}"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230123 02:44:56.691" endtime="20230123 02:44:56.713"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230123 02:44:56.719" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20230123 02:44:56.713" endtime="20230123 02:44:56.719"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:56.740" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:56.720" endtime="20230123 02:44:56.740"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230123 02:44:56.759" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20230123 02:44:56.740" endtime="20230123 02:44:56.759"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20230123 02:44:56.789" level="INFO">Current page contains button 'Log in'.</msg>
+<status status="PASS" starttime="20230123 02:44:56.759" endtime="20230123 02:44:56.789"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Login_Page_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230123 02:44:56.935" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Screenshots/Login_Page_Screenshot.png"&gt;&lt;img src="../../Screenshots/Login_Page_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230123 02:44:56.790" endtime="20230123 02:44:56.935"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:56.691" endtime="20230123 02:44:56.935"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230123 02:44:56.936" endtime="20230123 02:44:59.053"/>
+</kw>
+<status status="PASS" starttime="20230123 02:44:44.604" endtime="20230123 02:44:59.054"/>
+</test>
+<status status="PASS" starttime="20230123 02:44:26.073" endtime="20230123 02:44:59.057"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="LoginLogout">LoginLogout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
